@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 export const metadata = {
   title: "John Doe",
@@ -10,9 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="font-gilroy bg-background text-primary">
-        <Navbar/>
-        {children}
-        </body>
+        <SmoothScrolling>
+          <Navbar />
+          {children}
+        </SmoothScrolling>
+      </body>
     </html>
   );
 }
