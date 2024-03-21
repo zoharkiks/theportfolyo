@@ -6,10 +6,7 @@ const button = cva(" rounded-2xl border-2", {
     intent: {
       primary: [" text-primary font-medium border-accent"],
       secondary: [
-        "bg-white",
-        "text-gray-800",
-        "border-gray-400",
-        "hover:bg-gray-100",
+        "border-background text-background font-medium",
       ],
     },
     size: {
