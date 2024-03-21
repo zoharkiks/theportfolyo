@@ -38,7 +38,7 @@ const Hero = () => {
               <h3 className="font-medium uppercase ">
                 I'am <span className="text-accent">John Doe</span>, I develop 3D
                 visuals, user interfaces and web applications. I have been
-                honing my skills for 5 Years
+                honing my skills for <span className="text-accent">5</span> Years
               </h3>
             </div>
           </div>

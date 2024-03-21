@@ -7,7 +7,7 @@ import { Button } from "./Button";
 const Navbar = () => {
   return (
     <nav className="fixed z-10 flex items-center justify-between w-full p-5 ">
-      <span className="text-4xl font-medium cursor-pointer">J.Doe</span>
+      <span className="text-4xl font-medium cursor-pointer !w-max">J.Doe</span>
 
       {/* Hamburger menu */}
       <label className="md:hidden" for="check">

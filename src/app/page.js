@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Skills from "@/components/Skills";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main className="py-10">
      <Hero/>
      <Services/>
+     <Skills/>
     </main>
   );
 }
