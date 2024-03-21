@@ -7,11 +7,11 @@ const Services = () => {
     <section>
       <div className="container">
         <h2>What I Can Help You With</h2>
-        <div className="flex flex-col mt-10 items-center bg-primary text-background rounded-[var(--radius-l)] px-10 py-10">
+        <div className="flex flex-col mt-10 items-center bg-primary text-background rounded-[var(--radius-l)] px-10 py-14">
           <Button intent={"secondary"}>Services</Button>
-          <div className="flex flex-col items-center mt-4">
-            <h3 className="font-medium">Your Design Wishlist:</h3>
-            <h3 className="font-medium">
+          <div className="flex flex-col items-center mt-4 *:font-medium">
+            <h3 className="">Your Design Wishlist:</h3>
+            <h3 className="">
               {" "}
               <span className="italic">checked </span>
               off!
