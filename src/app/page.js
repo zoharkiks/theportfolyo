@@ -1,12 +1,10 @@
+import Hero from "@/components/Hero";
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="">
-      {/* Hero Section */}
-      <section>
-        <div className="container text-center">
-          <h1>Let's Go</h1>
-        </div>
-      </section>
+    <main className="py-10">
+     <Hero/>
     </main>
   );
 }
