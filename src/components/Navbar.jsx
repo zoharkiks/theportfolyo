@@ -37,7 +37,7 @@ const Navbar = () => {
           </Link>
 
           <Link href={"/"}>
-            <span>Review</span>
+            <span>Contact</span>
           </Link>
         </div>
         <Button>Let's Talk</Button>

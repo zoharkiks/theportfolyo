@@ -12,7 +12,9 @@ const Contact = () => {
 
         <ContactForm />
 
-        <div className="flex flex-col gap-6 mt-10 uppercase md:w-1/2">
+        <div className="w-full mt-10 border border-accent"></div>
+
+        <div className="flex flex-col gap-6 mt-10 uppercase md:w-1/2 ">
           <p>
             I'am OPEN TO TALK TO GOOD PEOPLE. JUST SAY HELLO AND I'll START A
             PRODUCTIVE COOPERATION.

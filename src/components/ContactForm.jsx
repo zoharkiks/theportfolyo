@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
+import { Button } from "./Button";
 
 const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you would handle form submission, e.g., via an API.
+   console.log('Some form submit action');
   };
 
   return (
@@ -47,6 +48,8 @@ const ContactForm = () => {
         cols="50"
         className="border rounded-lg bg-background focus:outline-none focus:shadow-outline"
       ></textarea>
+
+      <Button className='w-max' onClick={handleSubmit} type="submit">Send Message</Button>
     </form>
   );
 };
