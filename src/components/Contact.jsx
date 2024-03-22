@@ -1,7 +1,7 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 
-const Contact = () => {
+const Contact = ({ email, address, phoneNumber }) => {
   return (
     <section>
       <div className="container">
@@ -23,21 +23,21 @@ const Contact = () => {
           <div className="flex flex-col">
             <p>
               Call Me :{" "}
-              <a href="tel:+91-9212321321" className="">
-                +91-9212321321
+              <a href={`tel:${phoneNumber}`} className="">
+                {phoneNumber}
               </a>{" "}
             </p>
             <p>
               Say Hi :{" "}
-              <a href="mailto:portfolio3@gmail.com" className="">
-                portfolio3@gmail.com
+              <a href={`mailto:${email}`} className="">
+                {email}
               </a>{" "}
             </p>
 
             <p>
               Address :{" "}
               <a href="" className="">
-                Los Angeles , America
+                {address}
               </a>{" "}
             </p>
           </div>

@@ -2,7 +2,8 @@ import React from "react";
 import { Button } from "./Button";
 import ServiceCard from "./ServiceCard";
 
-const Services = () => {
+const Services = ({services}) => {
+
   return (
     <section>
       <div className="container">
@@ -25,10 +26,10 @@ const Services = () => {
             unforgettable.
           </p>
 
-          <div className="grid w-full gap-8 mt-6 md:grid-cols-3">
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+          <div className="grid w-full gap-12 mt-6 md:grid-cols-3">
+          {services?.filter(service => service.enabled).map((service) => (
+  <ServiceCard service={service} key={service._id} />
+))}
           </div>
         </div>
       </div>

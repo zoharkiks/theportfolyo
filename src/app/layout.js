@@ -1,5 +1,11 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+// Swiper Styles
+import "swiper/css"; // core Swiper
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 import SmoothScrolling from "@/components/SmoothScrolling";
 
 export const metadata = {

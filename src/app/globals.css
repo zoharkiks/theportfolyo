@@ -176,3 +176,12 @@ span {
     font-weight: 300;
   }
 }
+
+/* ------------------------- SWiper Js -------------------------------------------------- */
+.swiper-button-prev, .swiper-button-next, .swiper-button-next:after,.swiper-button-prev:after{
+  @apply !hidden md:!inline  !text-accent !text-2xl !font-medium
+}
+
+.swiper-pagination{
+  @apply md:!hidden
+}

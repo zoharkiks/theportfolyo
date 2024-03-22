@@ -1,16 +1,19 @@
+import Image from "next/image";
 import React from "react";
 
-const ServiceCard = () => {
+const ServiceCard = ({ service }) => {
+  const { name, charge, desc, image } = service;
+
   return (
     <div className="flex flex-col w-full gap-4">
-      <div className="bg-background rounded-3xl h-[233px] "></div>
+      <div className="bg-background rounded-3xl h-[233px] ">
+        <Image className="object-cover h-full rounded-3xl" src={image.url} alt={name}  width={1024}
+      height={1024} />
+      </div>
 
-      <h4 className="font-medium">UI/UX Solution</h4>
-      <p className="text-base font-medium">
-        Design direction for business. Get your business on the next level. We
-        help to create great experiences.
-      </p>
-      <span className="font-medium">$399</span>
+      <h4 className="font-medium">{name}</h4>
+      <p className="text-base font-medium">{desc}</p>
+      <span className="font-medium">{charge}</span>
     </div>
   );
 };

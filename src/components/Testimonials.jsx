@@ -1,30 +1,66 @@
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
 
-const Testimonials = () => {
+// Swiper
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+const Testimonials = ({ testimonials }) => {
+  const swiper = useSwiper();
   return (
     <section>
-      <div className="container bg-primary text-background rounded-[var(--radius-l)] p-10">
-        <div className="flex flex-col items-center mt-10 ">
-          <div className="flex *:font-medium ">
-            <h3>
-              What <span className="italic">people </span> say
-            </h3>
+      <div className="container ">
+        <div className="bg-primary text-background  rounded-[var(--radius-l)] p-10">
+          <div className="flex flex-col items-center mt-10 ">
+            <div className="flex *:font-medium ">
+              <h3>
+                What <span className="italic">people </span> say
+              </h3>
+            </div>
+
+            <p className="mt-4 text-center">
+              Discover the experiences that shape my story. Straight from those
+              who inspire my best work
+            </p>
           </div>
 
-          <p className="mt-4 text-center">
-            Discover the experiences that shape my story. Straight from those
-            who inspire my best work
-          </p>
 
-        
-        
-        </div>
+          <Swiper
+            modules={[Navigation, Pagination]} // Add the modules
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{ clickable: true, el: ".swiper-pagination" }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              832: {
+                slidesPerView: 1.5,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            spaceBetween={30} // Space between slides
+            className="mySwiper"
+          >
+            {testimonials
+              ?.filter((testimonial) => testimonial.enabled)
+              .map((testimonial) => (
+                <SwiperSlide className="h-full mt-10 " key={testimonial?._id}>
+                  <TestimonialCard testimonial={testimonial} />
+                </SwiperSlide>
+              ))}
 
-        <div className="grid gap-4 mx-10 mt-10 md:mx-0 ">
-          <TestimonialCard />
-          {/* <TestimonialCard />
-          <TestimonialCard /> */}
+            <div className="flex justify-between">
+              <span className="swiper-button-prev"></span>
+              <span className="swiper-button-next"></span>
+            </div>
+
+            <div className=" swiper-pagination"></div>
+          </Swiper>
         </div>
       </div>
     </section>

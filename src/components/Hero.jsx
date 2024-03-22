@@ -1,13 +1,18 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = ({ about }) => {
+  
+  
+  const { title } = about || {};
+  const [firstWord, secondWord] = title.split(" ");
+
   return (
     <>
       {/* Hero Section */}
       <section>
         <div className="container mt-10 ">
           <div className="flex items-center justify-between gap-10 ">
-            <h1>Software</h1>
+            <h1>{firstWord}</h1>
             <div className="justify-between hidden md:flex ">
               <span className="uppercase ">
                 Currently at Los Angeles, California
@@ -16,7 +21,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="flex md:justify-end">
-            <h1>Developer</h1>
+            <h1>{secondWord}</h1>
           </div>
 
           {/* Mobile Info */}
@@ -36,9 +41,9 @@ const Hero = () => {
             <div className="flex flex-col gap-4 mt-[20vh]">
               <span className="text-xs uppercase">About Myself</span>
               <h3 className="font-medium uppercase ">
-                I'am <span className="text-accent">John Doe</span>, I develop 3D
-                visuals, user interfaces and web applications. I have been
-                honing my skills for <span className="text-accent">5</span> Years
+                I'am <span className="text-accent">John Doe</span>,{" "}
+                {about?.subTitle}. I have been honing my skills for{" "}
+                <span className="text-accent">{about?.exp_year}</span> Years
               </h3>
             </div>
           </div>
