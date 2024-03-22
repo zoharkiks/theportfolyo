@@ -1,9 +1,7 @@
 import React from "react";
 
 const Hero = ({ about }) => {
-  
-  
-  const { title } = about || {};
+  const { title, description } = about || {};
   const [firstWord, secondWord] = title.split(" ");
 
   return (
@@ -39,12 +37,11 @@ const Hero = ({ about }) => {
             </div> */}
 
             <div className="flex flex-col gap-4 mt-[20vh]">
-              <span className="text-xs uppercase">About Myself</span>
-              <h3 className="font-medium uppercase ">
+              <span className="text-xl uppercase">About Myself</span>
+              <h4 className="font-medium leading-normal tracking-widest">
                 I'am <span className="text-accent">John Doe</span>,{" "}
-                {about?.subTitle}. I have been honing my skills for{" "}
-                <span className="text-accent">{about?.exp_year}</span> Years
-              </h3>
+                {about?.subTitle}. {description} 
+              </h4>
             </div>
           </div>
         </div>

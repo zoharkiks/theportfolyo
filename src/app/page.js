@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import Testimonials from "@/components/Testimonials";
+import Timeline from "@/components/Timeline";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -45,6 +46,7 @@ export default function Home() {
           <Services services={data?.services} />
           <Skills />
           <Projects projects={data?.projects} />
+          <Timeline   timeline={data?.timeline}/>
           <Testimonials testimonials={data?.testimonials} />
           <Contact email={data?.email} address={data?.about?.address} phoneNumber={data?.about?.phoneNumber} />
         </>

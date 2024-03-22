@@ -20,7 +20,8 @@ const Projects = ({ projects }) => {
   // Pagination
   const nextPage = () => {
     setCurrentPage((currentPage) => Math.min(currentPage + 1, maxPage));
-    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    sectionRef.current.scrollIntoView({ behavior: "smooth",  });
+    
   };
 
   const prevPage = () => {
