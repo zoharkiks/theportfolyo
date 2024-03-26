@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 import SmoothScrolling from "@/components/SmoothScrolling";
+import Loader from "@/components/Loader";
 
 export const metadata = {
   title: "John Doe",
@@ -16,12 +17,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-gilroy bg-background text-primary ">
-        <SmoothScrolling>
+      <SmoothScrolling>
+        <body className="font-gilroy bg-background text-primary ">
           <Navbar />
+          <Loader/>
           {children}
-        </SmoothScrolling>
-      </body>
+        </body>
+      </SmoothScrolling>
     </html>
   );
 }

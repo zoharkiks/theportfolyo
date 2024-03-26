@@ -11,6 +11,12 @@ module.exports = {
       primary: "var(--color-primary)",
       accent: "var(--color-accent)",
     },
+   
+    transitionTimingFunction: {
+  
+    },
+    transitionDuration: {
+    },
     extend: {
       fontFamily: {
         gilroy: ["gilroy"],

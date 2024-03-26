@@ -36,6 +36,7 @@ export default function Home() {
   }, []); // The empty array means this effect runs once on mount
 
 
+  
   return (
     <main className="py-10">
       {loading ? (
@@ -44,7 +45,7 @@ export default function Home() {
         <>
           <Hero about={data?.about} />
           <Services services={data?.services} />
-          <Skills />
+          <Skills skills={data?.skills} />
           <Projects projects={data?.projects} />
           <Timeline   timeline={data?.timeline}/>
           <Testimonials testimonials={data?.testimonials} />
