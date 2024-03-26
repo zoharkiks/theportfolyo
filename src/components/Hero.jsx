@@ -75,7 +75,7 @@ const Hero = ({ about }) => {
   );
 
   return (
-    <div ref={root}>
+    <div id="home" ref={root}>
       {/* Hero Section */}
       <section>
         <div className="container mt-10">

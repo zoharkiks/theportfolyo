@@ -1,13 +1,14 @@
 import React from "react";
 import { cva } from "class-variance-authority";
 
-const button = cva(" rounded-2xl border-2", {
+const button = cva(" rounded-2xl border-2 font-medium uppercase", {
   variants: {
     intent: {
-      primary: [" text-primary font-medium border-accent"],
-      secondary: [
-        "border-background text-background font-medium",
+      primary: [
+        " text-primary  border-accent hover:bg-accent transition-colors duration-[150ms] ease-in-expo ",
       ],
+      secondary: ["border-background text-background "],
+      disabled: ["bg-primary text-background "],
     },
     size: {
       small: ["text-sm", "py-1", "px-2"],

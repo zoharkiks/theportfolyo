@@ -17,39 +17,36 @@ const Timeline = ({ timeline }) => {
     setActiveSection(section);
   };
 
-
   let root = useRef();
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-  
-  useGSAP(() => {
-    
-let heading = new SplitType(".heading-timeline", {
-  types: "words",
-})
-    
-let words = heading.words;
-    
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".trigger-timeline",
-        start: "top 80%",
-        end: "bottom 20%", // Adjust end position as needed
-      },
-    });
+  useGSAP(
+    () => {
+      let heading = new SplitType(".heading-timeline", {
+        types: "words",
+      });
 
-    tl.from(words, {
-      yPercent: 100,
-      stagger: 0.025,
-      opacity: 0,
-      duration: 0.6,
-      ease: "power4.out",
-    })
-   
-    
-  },{ scope: root })
+      let words = heading.words;
 
-  // TODO Change active selection and disabled styling
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".trigger-timeline",
+          start: "top 80%",
+          end: "bottom 20%", // Adjust end position as needed
+        },
+      });
+
+      tl.from(words, {
+        yPercent: 100,
+        stagger: 0.025,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power4.out",
+      });
+    },
+    { scope: root }
+  );
+
   return (
     <section ref={root}>
       <div className="container">
@@ -58,13 +55,13 @@ let words = heading.words;
           <div className="flex justify-center gap-10 mt-10">
             <Button
               onClick={() => toggleSection("education")}
-              className={activeSection === "education" ? "active" : ""}
+              className={activeSection === "education" ? "bg-accent" : ""}
             >
               Education
             </Button>
             <Button
               onClick={() => toggleSection("experience")}
-              className={activeSection === "experience" ? "active" : ""}
+              className={activeSection === "experience" ? "bg-accent" : ""}
             >
               Experience
             </Button>

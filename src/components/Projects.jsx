@@ -104,13 +104,13 @@ let words = heading.words;
             ))}
         </div>
         <div className="flex items-center justify-center w-full gap-10 ">
-          <Button onClick={prevPage} disabled={currentPage === 1}>
+          <Button onClick={prevPage} disabled={currentPage === 1} intent={currentPage === 1 ? "disabled" : "primary"}> 
             Prev
           </Button>
           <span className="text-xl">
             Page {currentPage} of {maxPage}
           </span>
-          <Button onClick={nextPage} disabled={currentPage === maxPage}>
+          <Button onClick={nextPage} disabled={currentPage === maxPage} intent={currentPage === maxPage ? "disabled" : "primary"}>
             Next
           </Button>
         </div>
