@@ -16,17 +16,18 @@ const Hero = ({ about }) => {
 
   useGSAP(
     () => {
+
       const description = new SplitType(".description", {
         types: "lines",
       });
       const lines = description.lines;
 
-
       const fadeInTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".trigger",
           start: "top 80%",
-          end: "bottom 20%", // Adjust end position as needed
+          end: "bottom 20%",
+          
         },
       });
 
@@ -46,7 +47,6 @@ const Hero = ({ about }) => {
             y: "0%",
             duration: 1.5,
             stagger: 0.2,
-            // ease: "cubic-bezier(0, .89, .41, 1)",
             ease: CustomEase.create("cubic", "0, .89, .41, 1"),
           },
           0
@@ -64,12 +64,12 @@ const Hero = ({ about }) => {
           1
         );
       };
+      startHeroAnimation();
+      // window.addEventListener("startHeroAnimation", startHeroAnimation);
 
-      window.addEventListener("startHeroAnimation", startHeroAnimation);
-
-      return () => {
-        window.removeEventListener("startHeroAnimation", startHeroAnimation);
-      };
+      // return () => {
+      //   window.removeEventListener("startHeroAnimation", startHeroAnimation);
+      // };
     },
     { scope: root }
   );

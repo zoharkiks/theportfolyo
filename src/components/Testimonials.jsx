@@ -39,7 +39,7 @@ const Testimonials = ({ testimonials }) => {
 
   
   return (
-    <section ref={root}>
+    <section id="testimonials" ref={root}>
       <div className="container trigger-testimonials ">
         <div className="bg-primary text-background  rounded-[var(--radius-l)] p-10 testimonials">
           <div className="flex flex-col items-center mt-10 ">

@@ -14,6 +14,8 @@ const Skills = ({ skills }) => {
 
   
   useGSAP(() => {
+    const nav = document.querySelector("nav");
+
     
 let heading = new SplitType(".heading-skills", {
   types: "words",
@@ -21,13 +23,14 @@ let heading = new SplitType(".heading-skills", {
     
 let words = heading.words;
 
-console.log(words);
     
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".trigger-skills",
         start: "top 80%",
-        end: "bottom 20%", // Adjust end position as needed
+        end: "bottom 20%", 
+        
+        
       },
     });
 
@@ -45,7 +48,7 @@ console.log(words);
 
 
   return (
-    <section ref={root}>
+    <section id="skills" ref={root}>
       <div className="container">
         <h2 className="heading-skills trigger-skills">What I'm Good At</h2>
         <div

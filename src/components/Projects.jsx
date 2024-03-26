@@ -8,7 +8,7 @@ import gsap from "gsap/all";
 import SplitType from "split-type";
 
 const Projects = ({ projects }) => {
-  const itemsPerPage = 5; // Number of projects per page
+  const itemsPerPage = 6; // Number of projects per page
   const [currentPage, setCurrentPage] = useState(1);
   const sectionRef = useRef(null); // Reference to the section element
 
@@ -80,7 +80,7 @@ let words = heading.words;
   },{ scope: sectionRef })
 
   return (
-    <section  ref={sectionRef}>
+    <section  id="projects" ref={sectionRef}>
       <div className="container">
         <h2 className="heading-projects trigger-projects">What I've Built</h2>
         <div className="grid gap-5 p-6 md:grid-cols-2">

@@ -22,7 +22,6 @@ const ContactForm = () => {
         scrollTrigger: {
           trigger: ".trigger-form",
           start: "top 80%",
-          markers: true,
           end: "bottom 20%", // Adjust end position as needed
         },
       });
