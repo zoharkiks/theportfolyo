@@ -4,9 +4,7 @@ import { useGSAP } from "@gsap/react";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { CustomEase } from "gsap/CustomEase";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import SplitType from "split-type";
-
 import { getIst } from "@/utils";
 
 const Hero = ({ about }) => {
@@ -21,21 +19,16 @@ const Hero = ({ about }) => {
       const description = new SplitType(".description", {
         types: "lines",
       });
-const lines  = description.lines
-      
+      const lines = description.lines;
 
-      console.log(description);
 
       const fadeInTl = gsap.timeline({
-        scrollTrigger:{
-          trigger:".trigger",
-          start:"top 80%",
+        scrollTrigger: {
+          trigger: ".trigger",
+          start: "top 80%",
           end: "bottom 20%", // Adjust end position as needed
-
-          markers:true,
-
-        }
-      })
+        },
+      });
 
       fadeInTl.from(lines, {
         yPercent: 100,

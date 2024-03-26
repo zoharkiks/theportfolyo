@@ -1,5 +1,8 @@
 import { formatDateRange } from "@/utils";
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap/all";
+import React, { useRef } from "react";
 
 const EducationTimeline = ({ educationData }) => {
   const {
@@ -14,14 +17,40 @@ const EducationTimeline = ({ educationData }) => {
   } = educationData;
 
 
+  let root = useRef();
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  
+  useGSAP(() => {
+    
+
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trigger-education",
+        start: "top 80%",
+        end: "bottom 20%", // Adjust end position as needed
+      },
+    });
+
+    tl.from('.education', {
+      yPercent: 100,
+      stagger: .2,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power4.out",
+    })
+   
+    
+  },{ scope: root })
   return (
-    <div className="">
-      <h3 className="mb-4 font-medium border-b w-max border-accent">
+    <div ref={root} className="">
+      <h3 className="mb-4 font-medium border-b w-max border-accent trigger-education">
         Education
       </h3>
 
       {educationData?.map((item) => (
-        <div key={item._id} className="">
+        <div key={item._id} className="education">
           <div className="flex items-center justify-between">
             <div className="flex flex-col mt-4 grow">
               <h4 className="">{item?.jobTitle}</h4>

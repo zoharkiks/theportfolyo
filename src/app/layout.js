@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <SmoothScrolling>
         <body className="font-gilroy bg-background text-primary ">
           <Navbar />
-          <Loader/>
+          {/* <Loader/> */}
           {children}
         </body>
       </SmoothScrolling>

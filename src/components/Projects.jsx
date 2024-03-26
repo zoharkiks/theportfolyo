@@ -2,6 +2,10 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap/all";
+import SplitType from "split-type";
 
 const Projects = ({ projects }) => {
   const itemsPerPage = 5; // Number of projects per page
@@ -36,10 +40,49 @@ const Projects = ({ projects }) => {
     startIndex + itemsPerPage
   );
 
+
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  
+  useGSAP(() => {
+    
+let heading = new SplitType(".heading-projects", {
+  types: "words",
+})
+    
+let words = heading.words;
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trigger-projects",
+        start: "top 80%",
+        end: "bottom 20%", // Adjust end position as needed
+      },
+    });
+
+    tl.from(words, {
+      yPercent: 100,
+      stagger: 0.025,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power4.out",
+    })
+
+    tl.from('.projectCard', {
+      yPercent: 50,
+      stagger: .2,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power4.out",
+    })
+   
+    
+  },{ scope: sectionRef })
+
   return (
-    <section ref={sectionRef}>
+    <section  ref={sectionRef}>
       <div className="container">
-        <h2>What I've Built</h2>
+        <h2 className="heading-projects trigger-projects">What I've Built</h2>
         <div className="grid gap-5 p-6 md:grid-cols-2">
           {selectedProjects
             ?.filter((project) => project.enabled)
@@ -48,7 +91,7 @@ const Projects = ({ projects }) => {
                 key={project._id}
                 href={`/project/${generateSlug(project.title)}`}
               >
-                <div className="w-full h-[380px] rounded-xl mt-10">
+                <div className="w-full h-[380px] rounded-xl mt-10 projectCard">
                   <Image
                     src={project.image.url}
                     className="object-cover h-full rounded-xl"
