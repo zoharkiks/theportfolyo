@@ -44,21 +44,7 @@ const Contact = ({ email, address, phoneNumber,socialHandles }) => {
           </div>
 
           <div className="flex gap-6 *:transition-colors *:duration-[100ms] *:ease-in-expo ">
-            {/* <a className="hover:text-accent" target="_blank" href="">
-              <Instagram />
-            </a>
-
-            <a className="hover:text-accent" target="_blank" href="">
-              <Linkedin />
-            </a>
-
-            <a className="hover:text-accent" target="_blank" href="">
-              <Facebook />
-            </a>
-
-            <a className="hover:text-accent"  target="_blank" href="">
-              <Twitter />
-            </a> */}
+            
             {socialHandles.map((socialHandle) => (
                <a className="hover:text-accent" target="_blank" href={socialHandle.url}>
                <span className="font-medium lowercase">{socialHandle.platform}</span>

@@ -131,15 +131,15 @@ useGSAP(() => {
             <span>Skills</span>
           </Link>
 
-          <Link href="#projects">
+          <Link className="nav-link" href="#projects">
             <span>Projects</span>
           </Link>
 
-          <Link href="#testimonials">
+          <Link className="nav-link" href="#testimonials">
             <span>Testimonials</span>
           </Link>
 
-          <Link href="#contact">
+          <Link className="nav-link" href="#contact">
             <span>Contact</span>
           </Link>
         </div>

@@ -49,7 +49,7 @@ const ContactForm = () => {
             name="name"
             placeholder="Name Surname"
             required
-            className="ml-2 border-b w-max bg-background focus:outline-none focus:shadow-outline "
+            className="ml-2 border-b w-max bg-background focus:outline-none focus:shadow-outline text-accent placeholder:text-accent "
           />
           . My Email Is &nbsp;
           <input
@@ -58,7 +58,7 @@ const ContactForm = () => {
             name="email"
             placeholder="youremail@domain.com"
             required
-            className="my-4 border-b bg-background focus:outline-none focus:shadow-outline"
+            className="my-4 border-b bg-background focus:outline-none focus:shadow-outline text-accent placeholder:text-accent"
           />{" "}
           and my phone number is
           <input
@@ -67,7 +67,7 @@ const ContactForm = () => {
             name="number"
             placeholder="123-456-7890"
             required
-            className="my-4 border-b bg-background focus:outline-none focus:shadow-outline "
+            className="my-4 border-b bg-background focus:outline-none focus:shadow-outline text-accent placeholder:text-accent"
           />
           . Here is my message
         </h3>
@@ -77,7 +77,7 @@ const ContactForm = () => {
           name="message"
           rows="10"
           cols="50"
-          className="border rounded-lg bg-background focus:outline-none focus:shadow-outline"
+          className="border rounded-lg bg-background focus:outline-none focus:shadow-outline "
         ></textarea>
 
         <Button className="w-max" onClick={handleSubmit} type="submit">

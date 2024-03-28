@@ -41,10 +41,18 @@ h2 {
   line-height: 1.2;
 }
 
+h2::selection {
+  background-color: var(--color-accent);
+}
+
 h3 {
   font-weight: 400;
   font-size: calc(var(--title-size) * 1.2 / 3);
   line-height: 1.2;
+}
+
+h3::selection {
+  background-color: var(--color-accent);
 }
 
 h4 {
@@ -53,11 +61,21 @@ h4 {
   line-height: 1.2;
 }
 
+h4::selection {
+  background-color: var(--color-accent);
+}
+h4::selection {
+  background-color: var(--color-accent);
+}
+
 p {
   font-weight: 400;
   font-style: normal;
   font-size: var(--copy-size-l);
   line-height: 1.5;
+}
+p::selection {
+  background-color: var(--color-accent);
 }
 
 span {
@@ -149,6 +167,10 @@ span {
     background: var(--color-nav-dark); /* Use the custom variable */
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
+  }
+
+  .nav-link {
+    @apply hover:text-accent;
   }
   /* ------------------------- Utilities -------------------------------------------------- */
   .overlay {

@@ -36,7 +36,7 @@ const ProjectCard = ({
 
   const [isFlipped, setIsFlipped] = useState(false);
   return (
-    <div className=" h-[380px] text-background [perspective:1000px]  ">
+    <div className=" h-[400px] text-background [perspective:1000px]  ">
       <div
         onClick={() => setIsFlipped(!isFlipped)}
         className={`relative w-full h-full  [transform-style:preserve-3d] transition-transform duration-[1s]  cursor-pointer ${
@@ -75,14 +75,23 @@ const ProjectCard = ({
                 <span className="font-medium">Project Links</span>
 
                 <div className="flex flex-col gap-2 ">
-                  <a className="flex items-center gap-2" target="_blank" href={liveUrl}>
-                    <LucideGlobe size={20} className="transition-colors hover:text-accent duration-[150ms] ease-in-expo " />
+                  <a
+                    className="flex items-center gap-2"
+                    target="_blank"
+                    href={liveUrl}
+                  >
+                    <LucideGlobe
+                      size={20}
+                      className="transition-colors hover:text-accent duration-[150ms] ease-in-expo "
+                    />
                     <span>Live Link</span>
                   </a>
-                  <a className="flex items-center gap-2" href={githubUrl} >
-                    <Github size={20} className="transition-colors hover:text-accent duration-[150ms] ease-in-expo " />
+                  <a className="flex items-center gap-2" href={githubUrl}>
+                    <Github
+                      size={20}
+                      className="transition-colors hover:text-accent duration-[150ms] ease-in-expo "
+                    />
                     <span>GitHub Repo</span>
-
                   </a>
                 </div>
               </div>
