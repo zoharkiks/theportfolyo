@@ -145,8 +145,6 @@ span {
     transform: translate(3.5px, -7.5px) rotatez(45deg);
   }
 
-
-
   .glassmorphism {
     background: var(--color-nav-dark); /* Use the custom variable */
     backdrop-filter: blur(7px);
@@ -231,4 +229,15 @@ span {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0px 3px 18px 3px;
 }

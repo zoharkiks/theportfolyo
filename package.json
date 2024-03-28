@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.0",
     "@studio-freight/react-lenis": "^0.0.46",
     "class-variance-authority": "^0.7.0",
+    "extract-colors": "^4.0.2",
     "gsap": "^3.12.5",
     "lucide-react": "^0.359.0",
     "matter-js": "^0.19.0",

@@ -14,6 +14,7 @@ const Hero = ({ about }) => {
   const { title, description } = about || {};
   const [firstWord, secondWord] = title.split(" ");
 
+
   useGSAP(
     () => {
 
@@ -91,7 +92,7 @@ const Hero = ({ about }) => {
             <div className="justify-around hidden w-full md:flex ">
               <div className="overflow-hidden">
                 <span className="uppercase -translate-y-[-100%] block subheading">
-                  Currently In <br /> Los Angeles, California
+                  Currently In <br /> {about.address}
                 </span>
               </div>
 
@@ -123,12 +124,13 @@ const Hero = ({ about }) => {
           <div className="flex mt-10 md:hidden ">
             <div className="overflow-hidden ">
               <span className="uppercase mr-[10vw] -translate-y-[-100%] block subheading">
-                Currently In Los Angeles, California
+              Currently In <br /> {about.address}
+
               </span>
             </div>
             <div className="block overflow-hidden">
               <span className="uppercase -translate-y-[-100%] block subheading">
-                My Local Time
+              My Local Time <br /> {getIst()}
               </span>
             </div>
           </div>

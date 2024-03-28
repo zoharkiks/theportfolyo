@@ -114,7 +114,7 @@ useGSAP(() => {
     >
       <span className="text-2xl font-medium cursor-pointer !w-max ">J.Doe</span>
 
-      <MenuIcon className="md:hidden" onClick={() => handleMenuToggle()} />
+      <MenuIcon className="md:hidden" onClick={() => {handleMenuToggle()}} />
 
       <div className="items-center justify-center hidden gap-10 md:flex">
         {/* Nav Links */}
