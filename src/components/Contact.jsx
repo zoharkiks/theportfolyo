@@ -1,9 +1,10 @@
 import React from "react";
 import ContactForm from "./ContactForm";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
-const Contact = ({ email, address, phoneNumber }) => {
+const Contact = ({ email, address, phoneNumber,socialHandles }) => {
   return (
-    <section id='contact'>
+    <section id="contact">
       <div className="container">
         <div className="flex flex-col w-full uppercase">
           <h2 className="">Let's work&nbsp; </h2>
@@ -40,6 +41,29 @@ const Contact = ({ email, address, phoneNumber }) => {
                 {address}
               </a>{" "}
             </p>
+          </div>
+
+          <div className="flex gap-6 *:transition-colors *:duration-[100ms] *:ease-in-expo ">
+            {/* <a className="hover:text-accent" target="_blank" href="">
+              <Instagram />
+            </a>
+
+            <a className="hover:text-accent" target="_blank" href="">
+              <Linkedin />
+            </a>
+
+            <a className="hover:text-accent" target="_blank" href="">
+              <Facebook />
+            </a>
+
+            <a className="hover:text-accent"  target="_blank" href="">
+              <Twitter />
+            </a> */}
+            {socialHandles.map((socialHandle) => (
+               <a className="hover:text-accent" target="_blank" href={socialHandle.url}>
+               <span className="font-medium lowercase">{socialHandle.platform}</span>
+             </a>
+            ))}
           </div>
         </div>
       </div>

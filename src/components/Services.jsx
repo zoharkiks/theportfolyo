@@ -73,8 +73,7 @@ const Services = ({ services }) => {
 
           <div className="grid w-full gap-12 mt-6 md:grid-cols-3">
             {services
-              ?.filter((service) => service.enabled)
-              .map((service) => (
+              ?.map((service) => (
                 <ServiceCard service={service} key={service._id} />
               ))}
           </div>

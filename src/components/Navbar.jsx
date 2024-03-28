@@ -163,30 +163,30 @@ useGSAP(() => {
         id="nav-container"
         class="fixed bg-background h-screen w-full top-0 left-0 opacity-0 flex-col items-center justify-center -z-10 hidden overflow-hidden "
       >
-        <div class="relative h-full w-full flex flex-col items-center justify-center">
-          <div class="flex flex-col justify-center items-center gap-8">
+        <div class="relative h-full w-full flex flex-col items-center justify-center px-10">
+          <div class="flex flex-col justify-start items-start gap-8 uppercase  w-full">
             <Link onClick={() => handleMenuToggle()} className="nav-link" href="#home">
-              <span>Home</span>
+              <h2>Home</h2>
             </Link>
 
             <Link onClick={() => handleMenuToggle()} className="nav-link" href="#services">
-              <span>Services</span>
+              <h2>Services</h2>
             </Link>
 
             <Link onClick={() => handleMenuToggle()} className="nav-link" href="#skills">
-              <span>Skills</span>
+              <h2>Skills</h2>
             </Link>
 
             <Link onClick={() => handleMenuToggle()}  href="#projects">
-              <span>Projects</span>
+              <h2>Projects</h2>
             </Link>
 
             <Link onClick={() => handleMenuToggle()} href="#testimonials">
-              <span>Testimonials</span>
+              <h2>Testimonials</h2>
             </Link>
 
             <Link onClick={() => handleMenuToggle()} href="#contact">
-              <span>Contact</span>
+              <h2>Contact</h2>
             </Link>
           </div>
 

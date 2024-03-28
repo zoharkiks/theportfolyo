@@ -35,8 +35,7 @@ export default function Home() {
     fetchData();
   }, []); // The empty array means this effect runs once on mount
 
-
-  
+  console.log(data?.services.filter((service) => service.enabled));
   return (
     <main className="py-10">
       {loading ? (
@@ -44,12 +43,29 @@ export default function Home() {
       ) : (
         <>
           <Hero about={data?.about} />
-          <Services services={data?.services} />
-          <Skills skills={data?.skills} />
-          <Projects projects={data?.projects} />
-          <Timeline   timeline={data?.timeline}/>
-          <Testimonials testimonials={data?.testimonials} />
-          <Contact email={data?.email} address={data?.about?.address} phoneNumber={data?.about?.phoneNumber} />
+          <Services
+            services={data?.services.filter((service) => service.enabled)}
+          />
+          <Skills skills={data?.skills.filter((skill) => skill.enabled)} />
+          <Projects
+            projects={data?.projects.filter((project) => project.enabled)}
+          />
+          <Timeline
+            timeline={data?.timeline.filter((timeline) => timeline.enabled)}
+          />
+          <Testimonials
+            testimonials={data?.testimonials.filter(
+              (testimonial) => testimonial.enabled
+            )}
+          />
+          <Contact
+            socialHandles={data?.social_handles.filter(
+              (social_handle) => social_handle.enabled
+            )}
+            email={data?.email}
+            address={data?.about?.address}
+            phoneNumber={data?.about?.phoneNumber}
+          />
         </>
       )}
     </main>
