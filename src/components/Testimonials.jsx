@@ -3,7 +3,7 @@ import TestimonialCard from "./TestimonialCard";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap/all";
@@ -56,10 +56,13 @@ const Testimonials = ({ testimonials }) => {
           </div>
 
           <Swiper
-            modules={[Navigation, Pagination]} // Add the modules
+            modules={[Navigation, Pagination,Autoplay]} // Add the modules
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
+            }}
+            autoplay={{
+              delay: 5000,
             }}
             pagination={{ clickable: true, el: ".swiper-pagination" }}
             breakpoints={{
