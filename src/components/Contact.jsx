@@ -46,7 +46,7 @@ const Contact = ({ email, address, phoneNumber,socialHandles }) => {
           <div className="flex gap-6 *:transition-colors *:duration-[100ms] *:ease-in-expo ">
             
             {socialHandles.map((socialHandle) => (
-               <a className="hover:text-accent" target="_blank" href={socialHandle.url}>
+               <a key={socialHandle._id} className="hover:text-accent" target="_blank" href={socialHandle.url}>
                <span className="font-medium lowercase">{socialHandle.platform}</span>
              </a>
             ))}

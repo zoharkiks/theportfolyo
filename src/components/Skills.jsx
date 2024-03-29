@@ -13,6 +13,7 @@ const Skills = ({ skills }) => {
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+
   useGSAP(
     () => {
 
@@ -52,7 +53,7 @@ const Skills = ({ skills }) => {
             .slice(0, showAllSkills ? skills.length : 7) 
             .map((skill) => (
               <div
-                key={skill.id}
+                key={skill._id}
                 className="flex flex-col items-center justify-center transition-colors border rounded-full border-accent size-40 box text-primary hover:bg-primary duration-[110ms] hover:border-none hover:text-background group"
               >
                 <p className="font-medium group-hover:scale-110">{skill.name}</p>

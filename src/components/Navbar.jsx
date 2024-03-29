@@ -150,7 +150,7 @@ useGSAP(() => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
-        class="pointer-events-none fixed left-0 top-0 z-[1000] h-screen w-full fill-accent"
+        className="pointer-events-none fixed left-0 top-0 z-[1000] h-screen w-full fill-accent"
       >
         <path
           id="quadbz"
@@ -161,10 +161,10 @@ useGSAP(() => {
 
       <div
         id="nav-container"
-        class="fixed bg-background h-screen w-full top-0 left-0 opacity-0 flex-col items-center justify-center -z-10 hidden overflow-hidden "
+        className="fixed top-0 left-0 flex-col items-center justify-center hidden w-full h-screen overflow-hidden opacity-0 bg-background -z-10 "
       >
-        <div class="relative h-full w-full flex flex-col items-center justify-center px-10">
-          <div class="flex flex-col justify-start items-start gap-8 uppercase  w-full">
+        <div className="relative flex flex-col items-center justify-center w-full h-full px-10">
+          <div className="flex flex-col items-start justify-start w-full gap-8 uppercase">
             <Link onClick={() => handleMenuToggle()} className="nav-link" href="#home">
               <h2>Home</h2>
             </Link>

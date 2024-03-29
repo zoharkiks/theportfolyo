@@ -14,6 +14,8 @@ const ProjectCard = ({
   githubUrl,
 }) => {
   const [colors, setColors] = useState([]);
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const [gradientStyles, setGradientStyles] = useState();
 
   useEffect(() => {
@@ -34,7 +36,6 @@ const ProjectCard = ({
     return () => {};
   }, [img]);
 
-  const [isFlipped, setIsFlipped] = useState(false);
   return (
     <div className=" h-[400px] text-background [perspective:1000px]  ">
       <div
@@ -66,7 +67,7 @@ const ProjectCard = ({
                 <span className="font-medium">Tech Stack Used</span>
                 <div className="flex flex-col">
                   {techStack.map((tech, index) => (
-                    <span>&#8226; {tech}</span>
+                    <span key={index}>&#8226; {tech}</span>
                   ))}
                 </div>
               </div>
