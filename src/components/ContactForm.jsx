@@ -3,38 +3,56 @@ import React, { useRef } from "react";
 import { Button } from "./Button";
 import { useGSAP } from "@gsap/react";
 import gsap, { ScrollTrigger } from "gsap/all";
-import SplitType from "split-type";
 
 const ContactForm = () => {
+  /**
+   * Event handler for the form's submit event
+   *
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Some form submit action");
   };
 
   let root = useRef();
+  // GSAP plugins to use: useGSAP and ScrollTrigger
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+  /**
+   * useGSAP timeline for the form
+   *
+   * Animates the form's inputs when scrolled into view
+   *
+   * @param {gsap.core.Timeline} timeline The timeline to animate
+   */
   useGSAP(
-    () => {
-     
-
+    (timeline) => {
+      // ScrollTrigger setup
       const tl = gsap.timeline({
+        // Set the form as the trigger
         scrollTrigger: {
           trigger: ".trigger-form",
           start: "top 80%",
-          end: "bottom 20%", // Adjust end position as needed
+          end: "bottom 20%",
         },
       });
-
-      tl.from('.form-input', {
-        yPercent:20,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power4.out",
-      });
+      tl.fromTo(
+        ".form-input",
+        {
+          yPercent: 20,
+          opacity: 0,
+        },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power4.out",
+        }
+      );
     },
     { scope: root }
   );
+
   return (
     <div ref={root} className="">
       <form

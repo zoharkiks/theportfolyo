@@ -5,16 +5,7 @@ import gsap from "gsap/all";
 import React, { useRef } from "react";
 
 const EducationTimeline = ({ experienceData }) => {
-  const {
-    company_name,
-    summary,
-    sequence,
-    startDate,
-    endDate,
-    jobTitle,
-    jobLocation,
-    bulletPoints,
-  } = experienceData;
+
 
   let root = useRef();
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -28,7 +19,7 @@ const EducationTimeline = ({ experienceData }) => {
       scrollTrigger: {
         trigger: ".trigger-experience",
         start: "top 80%",
-        end: "bottom 20%", // Adjust end position as needed
+        end: "bottom 20%", 
       },
     });
 

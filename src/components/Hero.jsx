@@ -95,7 +95,7 @@ const Hero = ({ about }) => {
             width={2024}
             height={1024}
           />
-          <div className="absolute top-0 right-0 w-full h-full opacity-60 bg-background "></div>
+          <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-background "></div>
         </div>
 
         <div className="container mt-10">
@@ -163,8 +163,10 @@ const Hero = ({ about }) => {
             </div>
           </div>
 
+          
+
           <div className="flex flex-col justify-between gap-10 mt-10 md:flex-row-reverse md:items-center ">
-            <div className="flex flex-col gap-4 md:mt-[20vh] ">
+            <div className="flex flex-col gap-4 md:mt-[30vh] ">
               <span className="text-xl uppercase">About Myself</span>
               <div className="overflow-hidden trigger">
                 <h4 className="block font-medium leading-normal tracking-widest description ">

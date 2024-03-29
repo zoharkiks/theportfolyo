@@ -10,13 +10,29 @@ import Testimonials from "@/components/Testimonials";
 import Timeline from "@/components/Timeline";
 import Loader from "@/components/Loader";
 
+/**
+ * Home page component
+ *
+ * Fetches data from the API and renders the different sections of the page.
+ *
+ * @returns {React.Component} The rendered Home component.
+ */
 export default function Home() {
+  // State to hold the data fetched from the API
   const [data, setData] = useState(null);
+  // State to hold a loading indicator
   const [loading, setLoading] = useState(true);
+  // State to hold errors
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
+    /**
+     * Fetch data from the API
+     *
+     * Async function to fetch data from the API endpoint.
+     * If the response is not ok, set the error state.
+     * Otherwise, set the data state and disable the loading indicator.
+     */
     async function fetchData() {
       try {
         const response = await fetch(
@@ -39,26 +55,34 @@ export default function Home() {
 
   return (
     <main className="">
-        <Loader loading={loading}  />
+      <Loader loading={loading} />
 
-        {!loading &&
+      {/* If the data is not loading, render the sections of the page */}
+      {!loading && (
         <>
-           <Hero about={data?.about} />
+          {/* Render the Hero section */}
+          <Hero about={data?.about} />
+          {/* Render the Services section */}
           <Services
             services={data?.services.filter((service) => service.enabled)}
           />
+          {/* Render the Skills section */}
           <Skills skills={data?.skills.filter((skill) => skill.enabled)} />
+          {/* Render the Projects section */}
           <Projects
             projects={data?.projects.filter((project) => project.enabled)}
           />
+          {/* Render the Timeline section */}
           <Timeline
             timeline={data?.timeline.filter((timeline) => timeline.enabled)}
           />
+          {/* Render the Testimonials section */}
           <Testimonials
             testimonials={data?.testimonials.filter(
               (testimonial) => testimonial.enabled
             )}
           />
+          {/* Render the Contact section */}
           <Contact
             socialHandles={data?.social_handles.filter(
               (social_handle) => social_handle.enabled
@@ -68,8 +92,7 @@ export default function Home() {
             phoneNumber={data?.about?.phoneNumber}
           />
         </>
-        }
-       
+      )}
     </main>
   );
 }
