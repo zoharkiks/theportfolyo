@@ -32,7 +32,7 @@ const Timeline = ({ timeline }) => {
         scrollTrigger: {
           trigger: ".trigger-timeline",
           start: "top 80%",
-          end: "bottom 20%", // Adjust end position as needed
+          end: "bottom 20%", 
         },
       });
 

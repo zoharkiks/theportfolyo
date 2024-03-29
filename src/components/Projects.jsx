@@ -1,6 +1,4 @@
 import React, { useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "./Button";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,7 +13,6 @@ const Projects = ({ projects }) => {
 
   const maxPage = Math.ceil(projects?.length / itemsPerPage);
 
-console.log(projects);
 
   // Pagination
   const nextPage = () => {

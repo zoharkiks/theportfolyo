@@ -87,7 +87,7 @@ const Hero = ({ about }) => {
     <div id="home" ref={root}>
       {/* Hero Section */}
       <section className="relative ">
-        <div className=" justify-center mt-10  h-[450px] w-3/4 hidden md:flex   overflow-hidden absolute right-0">
+        <div className=" justify-center mt-10  h-[480px] w-3/4 hidden md:flex   overflow-hidden absolute right-0">
           <Image
             className="object-cover w-full h-full avatar -translate-x-[100%] relative"
             src={about.avatar.url}
