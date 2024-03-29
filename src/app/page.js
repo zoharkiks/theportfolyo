@@ -8,11 +8,13 @@ import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import Testimonials from "@/components/Testimonials";
 import Timeline from "@/components/Timeline";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     async function fetchData() {
@@ -33,16 +35,15 @@ export default function Home() {
     }
 
     fetchData();
-  }, []); // The empty array means this effect runs once on mount
+  }, []);
 
-  console.log(data?.services.filter((service) => service.enabled));
   return (
-    <main className="py-10">
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
+    <main className="">
+        <Loader loading={loading}  />
+
+        {!loading &&
         <>
-          <Hero about={data?.about} />
+           <Hero about={data?.about} />
           <Services
             services={data?.services.filter((service) => service.enabled)}
           />
@@ -67,7 +68,8 @@ export default function Home() {
             phoneNumber={data?.about?.phoneNumber}
           />
         </>
-      )}
+        }
+       
     </main>
   );
 }

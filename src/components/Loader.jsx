@@ -5,7 +5,7 @@ import { CustomEase } from "gsap/CustomEase";
 
 import gsap from "gsap";
 
-const Loader = () => {
+const Loader = ({ loading }) => {
   gsap.registerPlugin(CustomEase);
   let root = useRef();
 
@@ -22,7 +22,7 @@ const Loader = () => {
         autoAlpha: 1,
       },
       0
-    ) // 0 indicates the position in the timeline (start time)
+    )
       .to(
         ".heading-2",
         {
@@ -31,7 +31,7 @@ const Loader = () => {
           ease: CustomEase.create("cubic", "0, .89, .41, 1"),
         },
         0
-      ) // Same start time as the first animation
+      )
       .to(
         ".heading-3",
         {
@@ -90,24 +90,26 @@ const Loader = () => {
         0.6
       );
 
-    tl.to(
-      ".loader-bg",
-      {
-        y: "-100%", // move up
-        duration: 1.3,
-        ease: CustomEase.create("cubic", "0, .89, .41, 1"),
-        stagger: 0.4,
-        onComplete: () => {
-          window.dispatchEvent(new CustomEvent("startHeroAnimation"));
+    if (!loading) {
+      tl.to(
+        ".loader-bg",
+        {
+          y: "-100%", // move up
+          duration: 1.3,
+          ease: CustomEase.create("cubic", "0, .89, .41, 1"),
+          stagger: 0.4,
+          onComplete: () => {
+            window.dispatchEvent(new CustomEvent("startHeroAnimation"));
+          },
         },
-      },
-      1
-    );
+        1
+      );
 
-    tl.to(".main-loader", {
-      visibility: "hidden",
-    });
-  }, []);
+      tl.to(".main-loader", {
+        visibility: "hidden",
+      });
+    }
+  }, [loading]);
 
   return (
     <div

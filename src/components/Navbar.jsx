@@ -190,7 +190,6 @@ useGSAP(() => {
             </Link>
           </div>
 
-          <div class="bg-secondary absolute bottom-0 mb-2">f</div>
         </div>
       </div>
     </nav>
