@@ -19,26 +19,26 @@ const Navbar = () => {
 
   const navRef = useRef();
 
+  useGSAP(
+    () => {
+      const nav = document.querySelector("nav");
+      if (isScrolling && scrollDirection === "down") {
+        gsap.to(nav, {
+          y: "-110%",
+          duration: 0.5,
+        });
+      } else {
+        gsap.to(nav, {
+          y: "0",
+          duration: 0.5,
+        });
+      }
 
+      return () => {};
+    },
+    { dependencies: [isScrolling], scope: navRef }
+  );
 
-useGSAP(() => {
-  const nav = document.querySelector("nav");
-  if (isScrolling && scrollDirection === "down") {
-    gsap.to(nav, {
-      y: "-110%",
-      duration: 0.5,
-    });
-  } else {
-    gsap.to(nav, {
-      y: "0",
-      duration: 0.5,
-    });
-  }
-
-  return () => {};
-},{ dependencies: [isScrolling], scope: navRef })
-
-  
   useGSAP(
     () => {
       var tl = gsap.timeline({ paused: true });
@@ -114,7 +114,12 @@ useGSAP(() => {
     >
       <span className="text-2xl font-medium cursor-pointer !w-max ">J.Doe</span>
 
-      <MenuIcon className="md:hidden" onClick={() => {handleMenuToggle()}} />
+      <MenuIcon
+        className="md:hidden"
+        onClick={() => {
+          handleMenuToggle();
+        }}
+      />
 
       <div className="items-center justify-center hidden gap-10 md:flex">
         {/* Nav Links */}
@@ -165,19 +170,31 @@ useGSAP(() => {
       >
         <div className="relative flex flex-col items-center justify-center w-full h-full px-10">
           <div className="flex flex-col items-start justify-start w-full gap-8 uppercase">
-            <Link onClick={() => handleMenuToggle()} className="nav-link" href="#home">
+            <Link
+              onClick={() => handleMenuToggle()}
+              className="nav-link"
+              href="#home"
+            >
               <h2>Home</h2>
             </Link>
 
-            <Link onClick={() => handleMenuToggle()} className="nav-link" href="#services">
+            <Link
+              onClick={() => handleMenuToggle()}
+              className="nav-link"
+              href="#services"
+            >
               <h2>Services</h2>
             </Link>
 
-            <Link onClick={() => handleMenuToggle()} className="nav-link" href="#skills">
+            <Link
+              onClick={() => handleMenuToggle()}
+              className="nav-link"
+              href="#skills"
+            >
               <h2>Skills</h2>
             </Link>
 
-            <Link onClick={() => handleMenuToggle()}  href="#projects">
+            <Link onClick={() => handleMenuToggle()} href="#projects">
               <h2>Projects</h2>
             </Link>
 
@@ -189,7 +206,6 @@ useGSAP(() => {
               <h2>Contact</h2>
             </Link>
           </div>
-
         </div>
       </div>
     </nav>

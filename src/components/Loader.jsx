@@ -104,10 +104,14 @@ const Loader = ({ loading }) => {
         },
         1
       );
-
+      tl.set("html", {
+        overflow: "auto",
+      });
+      
       tl.to(".main-loader", {
         visibility: "hidden",
       });
+      
     }
   }, [loading]);
 
