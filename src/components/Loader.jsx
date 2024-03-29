@@ -47,7 +47,7 @@ const Loader = ({ loading }) => {
         {
           yPercent: -110,
           delay: 0.06,
-          duration: 1.6,
+          duration: 2,
           autoAlpha: 1,
           ease: CustomEase.create("cubic", "0, .89, .41, 1"),
         },
@@ -59,7 +59,7 @@ const Loader = ({ loading }) => {
         {
           yPercent: -110,
           delay: 0.12,
-          duration: 1.6,
+          duration: 2,
 
           autoAlpha: 1,
           ease: CustomEase.create("cubic", "0, .89, .41, 1"),
@@ -72,7 +72,7 @@ const Loader = ({ loading }) => {
         {
           yPercent: -110,
           delay: 0.18,
-          duration: 1.6,
+          duration: 2,
           autoAlpha: 1,
           ease: CustomEase.create("cubic", "0, .89, .41, 1"),
         },

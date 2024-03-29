@@ -37,7 +37,7 @@ const ProjectCard = ({
   }, [img]);
 
   return (
-    <div className=" h-[400px] text-background [perspective:1000px]  ">
+    <div className=" h-[600px] text-background [perspective:1000px]  ">
       <div
         onClick={() => setIsFlipped(!isFlipped)}
         className={`relative w-full h-full  [transform-style:preserve-3d] transition-transform duration-[1s]  cursor-pointer ${
@@ -58,7 +58,7 @@ const ProjectCard = ({
           style={gradientStyles}
           className="card-back card-face [transform:rotateY(180deg)] p-6 relative "
         >
-          <div className="absolute top-0 right-0 w-full h-full opacity-60 rounded-2xl bg-background -z-[7]"></div>
+          <div className="absolute top-0 right-0 w-full  opacity-60 rounded-2xl bg-background -z-[7]"></div>
           <div className="flex flex-col gap-4 text-primary">
             <p className="">{description}</p>
 
