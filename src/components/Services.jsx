@@ -25,10 +25,7 @@ const Services = ({ services }) => {
         scrollTrigger: {
           trigger: ".trigger-services",
           start: "top 80%",
-         
-         
         },
-        
       });
 
       tl.from(words, {
@@ -38,10 +35,13 @@ const Services = ({ services }) => {
         duration: 0.6,
         ease: "power4.out",
       });
-      tl.from(".services", {
-        opacity: 0,
-        duration: 0.6,
-        ease: "power4.out",
+     
+
+      tl.to(".service-card", {
+        opacity:1,
+        duration: 0.3,
+        stagger:.2
+
       });
     },
     { scope: root }
@@ -53,7 +53,7 @@ const Services = ({ services }) => {
         <h2 className="heading-services trigger-services">
           What I Can Help You With
         </h2>
-        <div className="flex flex-col mt-10 items-center bg-primary text-background rounded-[var(--radius-l)] px-10 py-14 services">
+        {/* <div className="flex flex-col mt-10 items-center bg-primary text-background rounded-[var(--radius-l)] px-10 py-14 services">
           <Button intent={"secondary"}>Services</Button>
           <div className="flex flex-col items-center mt-4 *:font-medium">
             <h3 className="">Your Design Wishlist:</h3>
@@ -77,6 +77,14 @@ const Services = ({ services }) => {
                 <ServiceCard service={service} key={service._id} />
               ))}
           </div>
+        </div> */}
+
+        <div className="grid w-full h-full gap-12 mt-10 md:grid-cols-3 ">
+          {services?.map((service) => (
+            <div key={service._id} className="opacity-0 service-card ">
+              <ServiceCard service={service} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
