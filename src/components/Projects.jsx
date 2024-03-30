@@ -57,7 +57,7 @@ const Projects = ({ projects }) => {
         ease: "power4.out",
       });
 
-      tl.from(".projectCard", {
+      tl.from(".project-card", {
         yPercent: 50,
         stagger: 0.2,
         opacity: 0,
@@ -76,15 +76,20 @@ const Projects = ({ projects }) => {
           {selectedProjects
             ?.filter((project) => project.enabled)
             .map((project) => (
-              <ProjectCard
-                key={project._id}
-                img={project.image.url}
-                title={project.title}
-                description={project.description}
-                techStack={project.techStack}
-                liveUrl={project.liveurl}
-                githubUrl={project.githuburl}
-              />
+              <div
+              key={project._id}
+              
+              className="project-card">
+
+                <ProjectCard
+                  img={project.image.url}
+                  title={project.title}
+                  description={project.description}
+                  techStack={project.techStack}
+                  liveUrl={project.liveurl}
+                  githubUrl={project.githuburl}
+                />
+              </div>
             ))}
         </div>
         <div className="flex items-center justify-center w-full gap-10 mt-10 ">

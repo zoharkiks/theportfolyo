@@ -53,7 +53,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log(data);
 
   return (
     <main className="">

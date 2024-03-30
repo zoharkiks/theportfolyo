@@ -39,6 +39,19 @@ const Skills = ({ skills }) => {
         duration: 0.6,
         ease: "power4.out",
       });
+
+      tl.fromTo(".skill-card", {
+        opacity:0,
+        duration: 0.2,
+        stagger:.1
+
+      },
+      {
+        opacity:1,
+        duration: 0.2,
+        stagger:.1
+      }
+      );
     },
     { scope: root }
   );
@@ -53,7 +66,10 @@ const Skills = ({ skills }) => {
             ?.filter((skill) => skill.enabled)
             .slice(0, showAllSkills ? skills.length : 7) 
             .map((skill) => (
-            <SkillCard skill={skill} key={skill.id} />
+              <div key={skill.id} className=" skill-card">
+
+                <SkillCard skill={skill}  />
+              </div>
             ))}
           
         </div>
