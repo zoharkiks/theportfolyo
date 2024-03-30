@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <main className="">
-      {/* <Loader loading={loading} /> */}
+      <Loader loading={loading} />
 
       {/* If the data is not loading, render the sections of the page */}
       {!loading && (
