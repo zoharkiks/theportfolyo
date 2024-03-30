@@ -1,8 +1,6 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
-import { extractColors } from "extract-colors";
-import { generateRandomGradient } from "@/utils";
+
 import { Github, LucideGlobe } from "lucide-react";
 
 const ProjectCard = ({
@@ -13,28 +11,8 @@ const ProjectCard = ({
   liveUrl,
   githubUrl,
 }) => {
-  const [colors, setColors] = useState([]);
-  const [isFlipped, setIsFlipped] = useState(false);
 
-  const [gradientStyles, setGradientStyles] = useState();
 
-  useEffect(() => {
-    const options = {
-      crossOrigin: "Anonymous",
-
-      pixels: 64000,
-      distance: 0.22,
-    };
-
-    extractColors(img, options)
-      .then((colors) => {
-        setColors(colors);
-        setGradientStyles(generateRandomGradient(colors));
-      })
-      .catch(console.error);
-
-    return () => {};
-  }, [img]);
 
   return (
     <div className=" text-primary">
@@ -75,8 +53,8 @@ const ProjectCard = ({
         </div>
 
         <div className="flex gap-4 ">
-          {techStack?.map((tech) => (
-            <span className="px-2 py-1 font-medium rounded-2xl bg-primary text-background">
+          {techStack?.map((tech,index) => (
+            <span  key={index} className="px-2 py-1 font-medium rounded-2xl bg-primary text-background">
               {tech}
             </span>
           ))}
