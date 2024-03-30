@@ -18,7 +18,6 @@ const ProjectCard = ({
 
   const [gradientStyles, setGradientStyles] = useState();
 
-
   useEffect(() => {
     const options = {
       crossOrigin: "Anonymous",
@@ -55,6 +54,25 @@ const ProjectCard = ({
         </div>
 
         <p className="font-light text-left">{description}</p>
+
+        <div className="flex flex-col gap-4">
+          <a
+            className="flex items-center gap-4 hover:text-accent"
+            href={liveUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LucideGlobe size={28} /> Live Link
+          </a>{" "}
+          <a
+            className="flex items-center gap-4 hover:text-accent"
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Github size={28} /> GitHub Repo
+          </a>
+        </div>
 
         <div className="flex gap-4 ">
           {techStack?.map((tech) => (
