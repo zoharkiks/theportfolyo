@@ -39,11 +39,11 @@ const EducationTimeline = ({ experienceData }) => {
 
       {experienceData?.map((item) => (
         <div key={item._id} className="experience">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col justify-between lg:items-center lg:flex-row">
             <div className="flex flex-col mt-4 grow">
               <h4 className="">{item?.jobTitle}</h4>
               <span className="font-light text-accent">{item?.company_name}</span>
-              <p className="mt-2 max-w-[90%]">{item?.summary}</p>
+              <p className="mt-2 max-w-[80%]">{item?.summary}</p>
 
             </div>
 
@@ -51,7 +51,7 @@ const EducationTimeline = ({ experienceData }) => {
               <span className="font-light">
                 {formatDateRange(item?.startDate, item?.endDate)}
               </span>
-              <span className="font-light text-right">{item?.jobLocation}</span>
+              <span className="font-light lg:text-right">{item?.jobLocation}</span>
             </div>
           </div>
           <div className="mt-4 border border-b opacity-20 "></div>

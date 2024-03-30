@@ -10,6 +10,7 @@ module.exports = {
       background: "var(--color-background)",
       primary: "var(--color-primary)",
       accent: "var(--color-accent)",
+      'card-dark': "var(--color-card-dark)",
     },
    
     transitionTimingFunction: {

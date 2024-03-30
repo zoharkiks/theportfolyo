@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { useGSAP } from "@gsap/react";
 import { Button } from "./Button";
+import SkillCard from "./SkillCard";
 
 const Skills = ({ skills }) => {
   const canvasRef = useRef(null);
@@ -47,17 +48,12 @@ const Skills = ({ skills }) => {
     <section id="skills" ref={root}>
       <div className="container">
         <h2 className="heading-skills trigger-skills">What I'm Good At</h2>
-        <div className="relative flex flex-wrap justify-center w-full gap-10 py-6 mt-10 md:justify-start md: rounded-xl border-primary ">
+        <div className="grid gap-10 mt-10 md:grid-cols-3">
         {skills
             ?.filter((skill) => skill.enabled)
             .slice(0, showAllSkills ? skills.length : 7) 
             .map((skill) => (
-              <div
-                key={skill._id}
-                className="flex flex-col items-center justify-center transition-colors border rounded-full border-accent size-40 box text-primary hover:bg-primary duration-[110ms] hover:border-none hover:text-background group"
-              >
-                <p className="font-medium group-hover:scale-110">{skill.name}</p>
-              </div>
+            <SkillCard skill={skill} key={skill.id} />
             ))}
           
         </div>

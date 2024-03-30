@@ -18,7 +18,6 @@ const ProjectCard = ({
 
   const [gradientStyles, setGradientStyles] = useState();
 
-  console.log(techStack);
 
   useEffect(() => {
     const options = {
@@ -41,7 +40,7 @@ const ProjectCard = ({
   return (
     <div className=" text-primary">
       <div className="flex flex-col gap-10">
-        <div className="px-6 py-12 bg-accent group ">
+        <div className="px-6 py-12 bg-primary group ">
           <Image
             className="drop-shadow-2xl group-hover:scale-95 transition-transform duration-[300ms] "
             src={img}
