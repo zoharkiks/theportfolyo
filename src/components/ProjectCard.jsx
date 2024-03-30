@@ -31,6 +31,14 @@ const ProjectCard = ({
           <div className="w-full h-[1.25px] bg-primary mt-3"></div>
         </div>
 
+        <div className="flex gap-4 ">
+          {techStack?.map((tech,index) => (
+            <span  key={index} className="px-2 py-1 font-medium rounded-2xl bg-primary text-background">
+              {tech}
+            </span>
+          ))}
+        </div>
+
         <p className="font-light text-left">{description}</p>
 
         <div className="flex flex-col gap-4">
@@ -52,13 +60,7 @@ const ProjectCard = ({
           </a>
         </div>
 
-        <div className="flex gap-4 ">
-          {techStack?.map((tech,index) => (
-            <span  key={index} className="px-2 py-1 font-medium rounded-2xl bg-primary text-background">
-              {tech}
-            </span>
-          ))}
-        </div>
+       
       </div>
     </div>
   );

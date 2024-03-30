@@ -57,7 +57,7 @@ const Skills = ({ skills }) => {
             ))}
           
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
         {!showAllSkills && skills.length > 5 && (
             <Button onClick={() => setShowAllSkills(true)}>Show More</Button>
           )}

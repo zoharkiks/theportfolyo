@@ -87,7 +87,7 @@ const Projects = ({ projects }) => {
               />
             ))}
         </div>
-        <div className="flex items-center justify-center w-full gap-10 mt-20 ">
+        <div className="flex items-center justify-center w-full gap-10 mt-10 ">
           <Button
             onClick={prevPage}
             disabled={currentPage === 1}

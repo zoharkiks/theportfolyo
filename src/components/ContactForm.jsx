@@ -60,7 +60,7 @@ const ContactForm = () => {
         className="flex flex-col gap-10 trigger-form form-input"
       >
         <h3 className="mt-10 ">
-          I'am
+          I'am 
           <input
             type="text"
             id="name"
@@ -78,7 +78,7 @@ const ContactForm = () => {
             required
             className="my-4 border-b bg-background focus:outline-none focus:shadow-outline text-accent placeholder:text-accent"
           />{" "}
-          and my phone number is
+          and my phone number is &nbsp;
           <input
             type="text"
             id="number"
