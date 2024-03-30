@@ -72,7 +72,7 @@ const Projects = ({ projects }) => {
     <section id="projects" ref={sectionRef}>
       <div className="container">
         <h2 className="heading-projects trigger-projects">What I've Built</h2>
-        <div className="grid gap-5 p-6 md:grid-cols-2">
+        <div className="grid mt-6 gap-14 lg:grid-cols-3 sm:grid-cols-2">
           {selectedProjects
             ?.filter((project) => project.enabled)
             .map((project) => (
@@ -87,7 +87,7 @@ const Projects = ({ projects }) => {
               />
             ))}
         </div>
-        <div className="flex items-center justify-center w-full gap-10 ">
+        <div className="flex items-center justify-center w-full gap-10 mt-20 ">
           <Button
             onClick={prevPage}
             disabled={currentPage === 1}

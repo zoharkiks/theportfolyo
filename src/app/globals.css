@@ -17,8 +17,8 @@
   --copy-size-s: 0.8em;
 
   /* Padding */
-  --section-padding: calc(var(--title-size) * 1.2);
-  --container-padding: calc(var(--gap) * 1);
+  --section-padding: calc(var(--title-size) * 1);
+  --container-padding: calc(var(--gap) * 1.5);
 
   --gap: calc(var(--title-size) * 0.3);
 
@@ -97,7 +97,7 @@ span {
     margin: 0 auto;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
-    max-width: calc(var(--title-size) * 11.5);
+    max-width: calc(var(--title-size) * 13);
   }
 
   .container.medium {
@@ -253,13 +253,12 @@ span {
   }
 }
 
-.card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  box-shadow: 0px 3px 18px 3px;
+.image-container {
+  position: fixed;
+  display: none;
+}
+
+.hovered .image-container {
+  display: block;
+  width: 240px;
 }
